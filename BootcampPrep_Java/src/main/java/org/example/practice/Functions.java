@@ -26,6 +26,16 @@ public class Functions {
         return 0.00;
     };
 
+    public String myMnemonic(String...words) {
+        StringBuilder sb = new StringBuilder();
+
+        for (String word: words) {
+            sb.append(word.charAt(0));
+        }
+
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -39,11 +49,16 @@ public class Functions {
 //        System.out.println(test1.defaultGreet("Jane", null));
         //expect "Hi Jane Doe!"
 
-        System.out.println(test1.taxCalculator(100, "NY"));
-        System.out.println(test1.taxCalculator2(100, "NY"));
+//        System.out.println(test1.taxCalculator(100, "NY"));
+//        System.out.println(test1.taxCalculator2(100, "NY"));
         //expect 104
-        System.out.println(test1.taxCalculator(100, "NJ"));
-        System.out.println(test1.taxCalculator2(100, "NJ"));
+//        System.out.println(test1.taxCalculator(100, "NJ"));
+//        System.out.println(test1.taxCalculator2(100, "NJ"));
         //expect 106.625
+
+        System.out.println(test1.myMnemonic("Must", "Accept", "Sugar", "Happiness"));
+        //expect MASH
+        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
+        //expect WEE
     }
 }
