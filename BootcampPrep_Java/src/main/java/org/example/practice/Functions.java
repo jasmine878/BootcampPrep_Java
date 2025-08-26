@@ -11,6 +11,10 @@ public class Functions {
         return "Hi " + firstName + " " + lastName + "!";
     }
 
+    public double taxCalculator(int price, String state) {
+        return state.equals("NY") ? Math.round(price * 1.04 * 1000.0) / 1000.0 : Math.round(price * 1.06625 * 1000.0) / 1000.0;
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -19,10 +23,14 @@ public class Functions {
 //        System.out.println(test1.simpleSum(-10, -20));
         //expect -30
 
-        System.out.println(test1.defaultGreet("Natalie", "Cole"));
+//        System.out.println(test1.defaultGreet("Natalie", "Cole"));
         //expect "Hi Natalie Cole!"
-        System.out.println(test1.defaultGreet("Jane", null));
+//        System.out.println(test1.defaultGreet("Jane", null));
         //expect "Hi Jane Doe!"
 
+        System.out.println(test1.taxCalculator(100, "NY"));
+        //expect 104
+        System.out.println(test1.taxCalculator(100, "NJ"));
+        //expect 106.625
     }
 }
