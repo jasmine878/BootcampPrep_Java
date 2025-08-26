@@ -15,6 +15,17 @@ public class Functions {
         return state.equals("NY") ? Math.round(price * 1.04 * 1000.0) / 1000.0 : Math.round(price * 1.06625 * 1000.0) / 1000.0;
     }
 
+    public double taxCalculator2(int price, String state) {
+        switch (state) {
+            case "NY":
+                return Math.round(price * 1.04 * 1000.0) / 1000.0;
+            case "NJ":
+                return Math.round(price * 1.06625 * 1000.0) / 1000.0;
+        }
+
+        return 0.00;
+    };
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -29,8 +40,10 @@ public class Functions {
         //expect "Hi Jane Doe!"
 
         System.out.println(test1.taxCalculator(100, "NY"));
+        System.out.println(test1.taxCalculator2(100, "NY"));
         //expect 104
         System.out.println(test1.taxCalculator(100, "NJ"));
+        System.out.println(test1.taxCalculator2(100, "NJ"));
         //expect 106.625
     }
 }
