@@ -11,6 +11,14 @@ public class Functions {
         return "Hi " + firstName + " " + lastName + "!";
     }
 
+    public String greeting(String name) {
+        if (name == null) {
+            return "Hello!";
+        } else {
+            return "Hello " + name + "!";
+        }
+    }
+
     public double taxCalculator(int price, String state) {
         return state.equals("NY") ? Math.round(price * 1.04 * 1000.0) / 1000.0 : Math.round(price * 1.06625 * 1000.0) / 1000.0;
     }
@@ -56,9 +64,14 @@ public class Functions {
 //        System.out.println(test1.taxCalculator2(100, "NJ"));
         //expect 106.625
 
-        System.out.println(test1.myMnemonic("Must", "Accept", "Sugar", "Happiness"));
+//        System.out.println(test1.myMnemonic("Must", "Accept", "Sugar", "Happiness"));
         //expect MASH
-        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
+//        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
         //expect WEE
+
+        System.out.println(test1.greeting("Layla"));
+        //expect "Hello Layla!"
+        System.out.println(test1.greeting(null));
+        //expect "Hello!"
     }
 }
