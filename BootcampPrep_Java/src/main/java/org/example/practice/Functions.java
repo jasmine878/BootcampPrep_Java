@@ -12,11 +12,11 @@ public class Functions {
     }
 
     public String greeting(String name) {
-        if (name == null) {
-            return "Hello!";
-        } else {
+        if (name != null) {
             return "Hello " + name + "!";
         }
+
+        return "Hello!";
     }
 
     public double taxCalculator(int price, String state) {
@@ -77,14 +77,14 @@ public class Functions {
 //        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
         //expect WEE
 
-//        System.out.println(test1.greeting("Layla"));
+        System.out.println(test1.greeting("Layla"));
         //expect "Hello Layla!"
-//        System.out.println(test1.greeting(null));
+        System.out.println(test1.greeting(null));
         //expect "Hello!"
 
-        System.out.println(test1.doYouPlayTheTheremin("Griffin"));
+//        System.out.println(test1.doYouPlayTheTheremin("Griffin"));
         //false
-        System.out.println(test1.doYouPlayTheTheremin("Scott"));
+//        System.out.println(test1.doYouPlayTheTheremin("Scott"));
         //true
     }
 }
