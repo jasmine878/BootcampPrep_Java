@@ -12,11 +12,8 @@ public class Functions {
     }
 
     public String greeting(String name) {
-        if (name != null) {
-            return "Hello " + name + "!";
-        }
 
-        return "Hello!";
+        return name != null ? String.format("Hello %s!", name) : "Hello!";
     }
 
     public double taxCalculator(int price, String state) {
