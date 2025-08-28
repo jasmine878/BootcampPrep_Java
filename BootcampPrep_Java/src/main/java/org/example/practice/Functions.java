@@ -44,6 +44,14 @@ public class Functions {
         return sb.toString();
     }
 
+    public boolean doYouPlayTheTheremin(String name) {
+        if (("s").equalsIgnoreCase(Character.toString(name.charAt(0)))) {
+            return true;
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -69,9 +77,14 @@ public class Functions {
 //        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
         //expect WEE
 
-        System.out.println(test1.greeting("Layla"));
+//        System.out.println(test1.greeting("Layla"));
         //expect "Hello Layla!"
-        System.out.println(test1.greeting(null));
+//        System.out.println(test1.greeting(null));
         //expect "Hello!"
+
+        System.out.println(test1.doYouPlayTheTheremin("Griffin"));
+        //false
+        System.out.println(test1.doYouPlayTheTheremin("Scott"));
+        //true
     }
 }
