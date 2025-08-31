@@ -49,6 +49,10 @@ public class Functions {
         return false;
     }
 
+    public boolean lastCharacter(String word1, String word2) {
+        return word1.charAt(word1.length() - 1) == word2.charAt(word2.length() - 1);
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -74,14 +78,19 @@ public class Functions {
 //        System.out.println(test1.myMnemonic("We", "Eat", "Eggs"));
         //expect WEE
 
-        System.out.println(test1.greeting("Layla"));
+//        System.out.println(test1.greeting("Layla"));
         //expect "Hello Layla!"
-        System.out.println(test1.greeting(null));
+//        System.out.println(test1.greeting(null));
         //expect "Hello!"
 
 //        System.out.println(test1.doYouPlayTheTheremin("Griffin"));
         //false
 //        System.out.println(test1.doYouPlayTheTheremin("Scott"));
         //true
+
+        System.out.println(test1.lastCharacter("apples", "pumpkins"));
+        //true
+        System.out.println(test1.lastCharacter("marker", "pen"));
+        //false
     }
 }
