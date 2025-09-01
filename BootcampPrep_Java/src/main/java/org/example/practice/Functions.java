@@ -53,6 +53,15 @@ public class Functions {
         return word1.charAt(word1.length() - 1) == word2.charAt(word2.length() - 1);
     }
 
+    public int maxOfThree(int num1, int num2, int num3) {
+        int maxNum = num1;
+
+        if (num2 > maxNum) maxNum = num2;
+        if (num3 > maxNum) maxNum = num3;
+
+        return maxNum;
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -88,9 +97,14 @@ public class Functions {
 //        System.out.println(test1.doYouPlayTheTheremin("Scott"));
         //true
 
-        System.out.println(test1.lastCharacter("apples", "pumpkins"));
+//        System.out.println(test1.lastCharacter("apples", "pumpkins"));
         //true
-        System.out.println(test1.lastCharacter("marker", "pen"));
+//        System.out.println(test1.lastCharacter("marker", "pen"));
         //false
+
+        System.out.println(test1.maxOfThree(5, 4, 10));
+        //10
+        System.out.println(test1.maxOfThree(7, 7, 4));
+        //7
     }
 }
