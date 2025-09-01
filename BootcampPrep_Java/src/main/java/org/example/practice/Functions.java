@@ -62,6 +62,15 @@ public class Functions {
         return maxNum;
     }
 
+    public String everyWhichWay(int num1, int num2, int result) {
+        if (num1 + num2 == result) return "sum";
+        if (num1 - num2 == result) return "difference";
+        if (num1 * num2 == result) return "product";
+        if (num1 / num2 == result) return "fraction";
+
+        return null;
+    }
+
     public static void main(String[] args) {
         Functions test1 = new Functions();
 
@@ -102,9 +111,15 @@ public class Functions {
 //        System.out.println(test1.lastCharacter("marker", "pen"));
         //false
 
-        System.out.println(test1.maxOfThree(5, 4, 10));
+//        System.out.println(test1.maxOfThree(5, 4, 10));
         //10
-        System.out.println(test1.maxOfThree(7, 7, 4));
+//        System.out.println(test1.maxOfThree(7, 7, 4));
         //7
+
+        System.out.println(test1.everyWhichWay(10, 20, 30)); //expect sum
+        System.out.println(test1.everyWhichWay(50, 20, 30)); //expect difference
+        System.out.println(test1.everyWhichWay(4, 4, 16)); //expect product
+        System.out.println(test1.everyWhichWay(100, 10, 10)); //expect fraction
+        System.out.println(test1.everyWhichWay(1, 1000, 50)); //expect null
     }
 }
