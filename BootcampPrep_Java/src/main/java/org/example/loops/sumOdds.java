@@ -1,6 +1,6 @@
 package org.example.loops;
 
-public class onlyOdds {
+public class sumOdds {
     public int onlyOdds(int ceiling) {
         int oddSum = 0;
 
@@ -18,7 +18,7 @@ public class onlyOdds {
     }
 
     public static void main(String[] args) {
-        onlyOdds test = new onlyOdds();
+        sumOdds test = new sumOdds();
         System.out.println(test.onlyOdds(10));
         //expect 25
         System.out.println(test.onlyOdds(-5));
