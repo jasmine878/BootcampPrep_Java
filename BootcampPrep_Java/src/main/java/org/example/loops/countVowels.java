@@ -1,0 +1,44 @@
+package org.example.loops;
+
+public class countVowels {
+    public static String mostVowels(String sentence) {
+        String vowels = "aeiou";
+        int maxVowelsCount = 0;
+        String maxVowelWord = "";
+        String[] words = sentence.split(" ");
+
+        for (String word: words) {
+            int wordVowelsCount = 0;
+
+            for (int i = 0; i < word.length(); i++) {
+                char element = word.charAt(i);
+
+                if (vowels.contains(Character.toLowerCase(element) + "")) {
+                    wordVowelsCount++;
+                }
+            }
+
+            if (wordVowelsCount > maxVowelsCount) {
+                maxVowelsCount = wordVowelsCount;
+                maxVowelWord = word;
+            }
+        }
+
+        return maxVowelWord;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(mostVowels("I am a keeper with some real rhythms"));
+        //expect keeper
+        System.out.println(mostVowels("try my gym"));
+        //expect ""
+    }
+}
+
+//start with max vowels at 0 and string at the default value of an empty string
+//split the sentence into an array of words
+//iterate through the words, when we find a word with more vowels, make that the max vowels
+//and change the return string to the word with the max vowels
+
+//return the word in the sentence with the most vowels
+//if there are no vowels, return an empty string
