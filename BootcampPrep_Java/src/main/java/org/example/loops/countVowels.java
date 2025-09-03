@@ -7,8 +7,7 @@ public class countVowels {
         String vowels = "aeiou";
         int maxVowelsCount = 0;
         String maxVowelWord = "";
-        String[] removePeriodArr = sentence.split("\\.");
-        String removePeriod = String.join("", removePeriodArr);
+        String removePeriod = sentence.replace(".", "");
         String[] words = removePeriod.split(" ");
 
         for (String word: words) {
@@ -35,8 +34,7 @@ public class countVowels {
         Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
         int maxVowelsCount = 0;
         String maxVowelsString = "";
-        String[] removePeriodArr = sentence.split("\\.");
-        String removePeriod = String.join("", removePeriodArr);
+        String removePeriod = sentence.replace(".", "");
         String[] words = removePeriod.split(" ");
 
         for (String word: words) {
