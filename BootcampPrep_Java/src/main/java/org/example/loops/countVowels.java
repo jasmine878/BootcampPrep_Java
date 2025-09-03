@@ -1,5 +1,7 @@
 package org.example.loops;
 
+import java.util.Set;
+
 public class countVowels {
     public static String mostVowels(String sentence) {
         String vowels = "aeiou";
@@ -27,10 +29,38 @@ public class countVowels {
         return maxVowelWord;
     }
 
+    public static String mostVowels2(String sentence) {
+        Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
+        int maxVowelsCount = 0;
+        String maxVowelsString = "";
+        String[] words = sentence.split(" ");
+
+        for (String word: words) {
+            int wordVowelCount = 0;
+
+            for (int i = 0; i < word.length(); i++) {
+                char element = word.charAt(i);
+
+                if (vowels.contains(element)) {
+                    wordVowelCount++;
+                }
+
+                if (wordVowelCount > maxVowelsCount) {
+                    maxVowelsCount = wordVowelCount;
+                    maxVowelsString = word;
+                }
+            }
+        }
+
+        return maxVowelsString;
+    }
+
     public static void main(String[] args) {
         System.out.println(mostVowels("I am a keeper with some real rhythms"));
+        System.out.println(mostVowels2("I am a keeper with some real rhythms"));
         //expect keeper
         System.out.println(mostVowels("try my gym"));
+        System.out.println(mostVowels2("try my gym"));
         //expect ""
     }
 }
