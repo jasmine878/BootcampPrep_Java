@@ -7,7 +7,9 @@ public class countVowels {
         String vowels = "aeiou";
         int maxVowelsCount = 0;
         String maxVowelWord = "";
-        String[] words = sentence.split(" ");
+        String[] removePeriodArr = sentence.split("\\.");
+        String removePeriod = String.join("", removePeriodArr);
+        String[] words = removePeriod.split(" ");
 
         for (String word: words) {
             int wordVowelsCount = 0;
@@ -33,7 +35,9 @@ public class countVowels {
         Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
         int maxVowelsCount = 0;
         String maxVowelsString = "";
-        String[] words = sentence.split(" ");
+        String[] removePeriodArr = sentence.split("\\.");
+        String removePeriod = String.join("", removePeriodArr);
+        String[] words = removePeriod.split(" ");
 
         for (String word: words) {
             int wordVowelCount = 0;
@@ -61,6 +65,15 @@ public class countVowels {
         //expect keeper
         System.out.println(mostVowels("try my gym"));
         System.out.println(mostVowels2("try my gym"));
+        //expect ""
+        System.out.println(mostVowels("Wit beyond measure is man\'s greatest treasure."));
+        System.out.println(mostVowels2("Wit beyond measure is man\'s greatest treasure."));
+        //expect measure
+        System.out.println(mostVowels("Give her hell from us, Peeves."));
+        System.out.println(mostVowels2("Give her hell from us, Peeves."));
+        //expect Peeves
+        System.out.println(mostVowels("why dry my sly lynx?"));
+        System.out.println(mostVowels2("why dry my sly lynx?"));
         //expect ""
     }
 }
