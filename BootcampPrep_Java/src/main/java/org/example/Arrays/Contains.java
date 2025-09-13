@@ -26,7 +26,7 @@ public class Contains {
 
     public static boolean myAnyMatch2(String[] words, String searchWord) {
 
-        return Arrays.stream(words).anyMatch(word -> word.equals(searchWord));
+        return Arrays.asList(words).contains(searchWord);
     }
 
     public static void main(String[] args) {
