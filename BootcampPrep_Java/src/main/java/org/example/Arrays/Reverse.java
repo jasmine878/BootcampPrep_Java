@@ -49,7 +49,7 @@ public class Reverse {
         System.out.println();
 
         System.out.println(Arrays.toString(test.reverseArray(new Integer[] {4, 5, 6})));
-        System.out.println(Arrays.toString(test.myReverse(new String[] {"Apple", "Berry", "Corn"})));
+        System.out.println(Arrays.toString(test.reverseArray(new String[] {"Apple", "Berry", "Corn"})));
     }
 }
 
