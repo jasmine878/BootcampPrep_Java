@@ -20,15 +20,13 @@ public class Contains {
     }
 
     public static boolean myAnyMatch(int[] numbers, int searchNum) {
-        if (Arrays.stream(numbers).anyMatch(num -> num == searchNum)) return true;
 
-        return false;
+        return Arrays.stream(numbers).anyMatch(num -> num == searchNum);
     }
 
     public static boolean myAnyMatch2(String[] words, String searchWord) {
-        if (Arrays.stream(words).anyMatch(word -> word.equals(searchWord))) return true;
 
-        return false;
+        return Arrays.stream(words).anyMatch(word -> word.equals(searchWord));
     }
 
     public static void main(String[] args) {
