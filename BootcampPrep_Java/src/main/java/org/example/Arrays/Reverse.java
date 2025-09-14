@@ -45,7 +45,7 @@ public class Reverse {
     }
 
     public Integer[] reversedStack(int[] numArray) {
-        Stack<Integer> stack = new Stack();
+        Stack<Integer> stack = new Stack<>();
 
         for (int i = numArray.length - 1; i >=0; i--) {
             int element = numArray[i];
