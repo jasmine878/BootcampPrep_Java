@@ -2,6 +2,7 @@ package org.example.Arrays;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Stack;
 
 public class Reverse {
     public int[] myReverse(int[] numArray) {
@@ -42,14 +43,28 @@ public class Reverse {
         return wordArray;
     }
 
+    public Integer[] reversedStack(int[] numArray) {
+        Stack<Integer> stack = new Stack();
+
+        for (int i = numArray.length - 1; i >=0; i--) {
+            int element = numArray[i];
+            stack.push(element);
+        }
+
+        return stack.toArray(new Integer[0]);
+    }
+
     public static void main(String[] args) {
         Reverse test = new Reverse();
         System.out.println(Arrays.toString(test.myReverse(new int[] {1, 2, 3})));    //expect [3, 2, 1]
         System.out.println(Arrays.toString(test.myReverse(new String[] {"first", "second", "third"}))); //expect ["third", "second", "first"]
         System.out.println();
 
-        System.out.println(Arrays.toString(test.reverseArray(new Integer[] {4, 5, 6})));
-        System.out.println(Arrays.toString(test.reverseArray(new String[] {"Apple", "Berry", "Corn"})));
+        System.out.println(Arrays.toString(test.reverseArray(new Integer[] {4, 5, 6})));    //expect [6, 5, 4]
+        System.out.println(Arrays.toString(test.reverseArray(new String[] {"Apple", "Berry", "Corn"})));  //expect ["Corn", "Berry", "Apple"]
+        System.out.println();
+
+        System.out.println(Arrays.asList(test.reversedStack(new int[] {5, 10, 15, 20})));   //expect [20, 15, 10, 5]
     }
 }
 
