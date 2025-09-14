@@ -2,6 +2,7 @@ package org.example.Arrays;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Reverse {
@@ -54,6 +55,16 @@ public class Reverse {
         return stack.toArray(new Integer[0]);
     }
 
+    public Integer[] reversedLinkedList(int[] numArray) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+
+        for (Integer num: numArray) {
+            linkedList.addFirst(num);
+        }
+
+        return linkedList.toArray(new Integer[0]);
+    }
+
     public static void main(String[] args) {
         Reverse test = new Reverse();
         System.out.println(Arrays.toString(test.myReverse(new int[] {1, 2, 3})));    //expect [3, 2, 1]
@@ -65,6 +76,7 @@ public class Reverse {
         System.out.println();
 
         System.out.println(Arrays.asList(test.reversedStack(new int[] {5, 10, 15, 20})));   //expect [20, 15, 10, 5]
+        System.out.println(Arrays.asList(test.reversedLinkedList(new int[] {1, 100, 1000})));   //expect [1000, 100, 1]
     }
 }
 
