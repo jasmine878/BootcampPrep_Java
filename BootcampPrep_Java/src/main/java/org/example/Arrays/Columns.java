@@ -9,7 +9,7 @@ public class Columns {
         Integer[][] result = new Integer[array.length][];
 
         for (int i = 0; i < array.length; i++) {
-            List<Integer[]> row = new ArrayList(Arrays.asList(array[i]));
+            List<Integer> row = new ArrayList<>(Arrays.asList(array[i]));
             int index = num;
 
             //remove columns from the row
